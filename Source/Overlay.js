@@ -4,7 +4,7 @@ description:     Overlay
 
 authors:
   - David Walsh (http://davidwalsh.name)
-
+  - modified by kentaromiura to allow html content
 license:
   - MIT-style license
 
@@ -24,7 +24,8 @@ var Overlay = new Class({
 		color: '#000',
 		duration: 500,
 		opacity: 0.5,
-		zIndex: 5000/*,
+		zIndex: 5000,
+		html:''/*,
 		onClick: $empty,
 		onClose: $empty,
 		onHide: $empty,
@@ -38,6 +39,7 @@ var Overlay = new Class({
 		this.container = document.id(container);
 		this.overlay = new Element('div',{
 			id: this.options.id,
+			html: this.options.html,
 			opacity: 0,
 			styles: {
 				position: 'absolute',
